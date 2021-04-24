@@ -45,7 +45,7 @@ if(isset($_POST['register'])) {
                                 <input type="email" placeholder="Email"/>
                                 <input type="text" placeholder="Phone Number"/>
                                 <input type="date" name="Birthday" id="name" placeholder="Birthday">
-                                <input type="submit" name="register">REGISTER</input>
+                                <button type="submit" name="register">REGISTER</button>
                                 <p class="message">Librarian or Staff member? <a href="#">Log in</a></p>
                             </form>
                             <form class="register-form">
