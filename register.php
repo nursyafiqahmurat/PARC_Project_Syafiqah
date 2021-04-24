@@ -2,7 +2,7 @@
 
 include 'conn.php';
     
-if(isset($POST['register'])) {
+if(isset($_POST['register'])) {
     echo "Registered";
 }else {
     echo "Failed";
@@ -38,14 +38,14 @@ if(isset($POST['register'])) {
                 <div class="col-1">
                     <div class="form-box">
                         <div class="form">
-                            <form class="login-form">
+                            <form class="login-form" method="POST">
                                 <center><h1 class="main-heading">Register Today!</h1></center>
                                 <input type="text" placeholder="Full name"/>
                                 <input type="text" placeholder="IC Number"/>
                                 <input type="email" placeholder="Email"/>
                                 <input type="text" placeholder="Phone Number"/>
                                 <input type="date" name="Birthday" id="name" placeholder="Birthday">
-                                <button name="register"><a href="#">REGISTER</a></button>
+                                <input type="submit" name="register">REGISTER</input>
                                 <p class="message">Librarian or Staff member? <a href="#">Log in</a></p>
                             </form>
                             <form class="register-form">
