@@ -3,10 +3,22 @@
 include 'conn.php';
     
 if(isset($_POST['register'])) {
-    echo "Registered";
-}else {
-    echo "Failed";
+    $Fullname = $_POST ["Fullname"];
+    $IC_Number = $_POST["IC_Number"];
+    $Phone_Number = $_POST["Phone_Number"];
+    $email = $_POST["email"]
+
+    $SQL= "INSERT INTO user (Full Name, IC Number, Phone Number, Email)
+    VALUES (`".$Fullname."`,`".$IC_Number."`,`".$Phone_Number."`,`".$email."`);";
+
+    echo $SQL;
 }
+
+if(isset($_POST['login'])) { 
+    $Staff_ID = $_POST["Staff_ID"];
+    $Password = $_POST["Password"]
+}
+
 ?>
 
 
@@ -23,7 +35,7 @@ if(isset($_POST['register'])) {
         <div class="sub-page">
             <div class="navigation-bar">
                 <div class="logo">
-                    <a href='index.html'>LALA Library</a>
+                    <a href='index.php'>LALA Library</a>
                 </div>
                 <nav>
                     <ul id='MenuItems'>
@@ -40,19 +52,18 @@ if(isset($_POST['register'])) {
                         <div class="form">
                             <form class="login-form" method="POST">
                                 <center><h1 class="main-heading">Register Today!</h1></center>
-                                <input type="text" placeholder="Full name"/>
-                                <input type="text" placeholder="IC Number"/>
-                                <input type="email" placeholder="Email"/>
-                                <input type="text" placeholder="Phone Number"/>
-                                <input type="date" name="Birthday" id="name" placeholder="Birthday">
+                                <input type="text" name="FullName" placeholder="Full name"/>
+                                <input type="text" name="IC_Number" placeholder="IC Number"/>
+                                <input type="text" name="Phone_Number" placeholder="Phone Number"/>
+                                <input type="email" name="email" placeholder="Email"/>
                                 <button type="submit" name="register">REGISTER</button>
                                 <p class="message">Librarian or Staff member? <a href="#">Log in</a></p>
                             </form>
-                            <form class="register-form">
+                            <form class="register-form" method="POST">
                                 <center><h1 class="main-heading">Login</h1></center>
-                                <input type="text"placeholder="Staff ID"/>
-                                <input type="password"placeholder="Password"/>
-                                <button><a href="index1.php">LOGIN</a></button>
+                                <input type="text" name="Staff_ID" placeholder="Staff ID"/>
+                                <input type="password" name="Password" placeholder="Password"/>
+                                <button type="submit" name="login">LOGIN</button>
                                 <p class="message">Not a member of the LALA Library yet? <a href="#">Create a membership card today!</a>
                                 </p>
                             </form>

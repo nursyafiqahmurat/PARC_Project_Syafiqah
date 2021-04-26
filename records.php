@@ -18,7 +18,7 @@
         <div class="sub-page">
             <div class="navigation-bar">
                 <div class="logo">
-                    <a href='index1.html'>LALA Library</a>
+                    <a href='index1.php'>LALA Library</a>
                 </div>
                 <nav>
                     <ul id='MenuItems'>

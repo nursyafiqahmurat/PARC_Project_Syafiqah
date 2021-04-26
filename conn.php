@@ -5,7 +5,7 @@
 $hostname = 'localhost';
 $username = 'todos';
 $password = '87654321';
-$database = 'todos';
+$database = 'library';
 
 $conn= mysqli_connect(
     $hostname,
