@@ -1,27 +1,63 @@
 <?php
 
+session_start();
+if(isset($_SESSION["key"])) { 
+    header('location:index1.php');
+}
+
 include 'conn.php';
     
 if(isset($_POST['register'])) {
-    $Fullname = $_POST ["Fullname"];
+    $Full_Name = $_POST ["Full_Name"];
     $IC_Number = $_POST["IC_Number"];
     $Phone_Number = $_POST["Phone_Number"];
-    $email = $_POST["email"]
-
-    $SQL= "INSERT INTO user (Full Name, IC Number, Phone Number, Email)
-    VALUES (`".$Fullname."`,`".$IC_Number."`,`".$Phone_Number."`,`".$email."`);";
-
-    echo $SQL;
+    $email = $_POST["email"];
+    $password = md5($_POST["password"]);
+    
+    $sql= "INSERT INTO user (Full_Name, IC_Number, Phone_Number, Email, Password)
+    VALUES ('".$Full_Name."','".$IC_Number."','".$Phone_Number."','".$email."','".$password."');";
+    
+    $query = mysqli_query($conn, $sql);
+    if ($query) {
+        echo "Success";
+    }else {
+        echo "Failed";
+    }
 }
 
-if(isset($_POST['login'])) { 
-    $Staff_ID = $_POST["Staff_ID"];
-    $Password = $_POST["Password"]
+if(isset($_POST['login'])) {
+    $email = $_POST["email"];
+    $password = md5($_POST["password"]);
+
+    //if email is registered
+    $sql = "SELECT * FROM user WHERE email = '".$email."'";    
+    $query = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($query) > 0) {
+        
+        //if email and password is correct
+        $sql = "SELECT * FROM user WHERE 
+            email = '".$email."' AND 
+            Password ='".$password."'";
+    
+        $query = mysqli_query($conn, $sql);
+    
+        if (mysqli_num_rows($query) > 0) {
+            //if success
+            $row = mysqli_fetch_array($query);
+            $_SESSION["key"] = $row["User_ID"];
+            header('location:index1.php');
+        }else {
+                // if failed
+                echo "failed";
+        }
+        
+    }else {
+        echo "Incorrect email or password ";
+    }
+    
 }
 
-?>
-
-
+ ?>
 
 <html>
 <head>
@@ -52,17 +88,19 @@ if(isset($_POST['login'])) {
                         <div class="form">
                             <form class="login-form" method="POST">
                                 <center><h1 class="main-heading">Register Today!</h1></center>
-                                <input type="text" name="FullName" placeholder="Full name"/>
+                                <input type="text" name="Full_Name" placeholder="Full name"/>
                                 <input type="text" name="IC_Number" placeholder="IC Number"/>
                                 <input type="text" name="Phone_Number" placeholder="Phone Number"/>
                                 <input type="email" name="email" placeholder="Email"/>
+                                <input type="password" name="password" placeholder="Password"/>
                                 <button type="submit" name="register">REGISTER</button>
                                 <p class="message">Librarian or Staff member? <a href="#">Log in</a></p>
                             </form>
                             <form class="register-form" method="POST">
+                                <br><br><br>
                                 <center><h1 class="main-heading">Login</h1></center>
-                                <input type="text" name="Staff_ID" placeholder="Staff ID"/>
-                                <input type="password" name="Password" placeholder="Password"/>
+                                <input type="text" name="email" placeholder="Email"/>
+                                <input type="password" name="password" placeholder="Password"/>
                                 <button type="submit" name="login">LOGIN</button>
                                 <p class="message">Not a member of the LALA Library yet? <a href="#">Create a membership card today!</a>
                                 </p>

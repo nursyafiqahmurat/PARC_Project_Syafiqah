@@ -1,5 +1,15 @@
 <?php
 
+session_start();
+if(!isset($_SESSION["key"])) { 
+    header('location:register.php');
+}
+
+include 'conn.php';
+$sql = "SELECT * FROM user WHERE User_ID = ".$_SESSION["key"];
+$query= mysqli_query($conn, $sql);
+$user = mysqli_fetch_array($query);
+
 ?>
 
 
@@ -22,13 +32,14 @@
                         <li><a href='index1.php'>Home</a></li>
                         <li><a href='collections.php'>Collections</a></li>
                         <li><a href='records.php'>Action Records</a></li>
-                        <li><a href='index.php'>Log out</a></li>                                                
+                        <li><a href='logout.php'>Log out</a></li>                                                
                     </ul>
                 </nav>
             </div>
         </div>
         <br>
         <br>
+        <h1 style="color:white;text-align:center;font-family: 'Poppins', sans-serif;">Hello <?php echo $user['Full_Name'];?></h1>
         <br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Welcome-To-The-Team-Robots-Picture.png" alt="welcome" width="1200" height="400">
     </div>

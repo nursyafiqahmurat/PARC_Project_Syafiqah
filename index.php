@@ -1,4 +1,4 @@
-<?php //Register and log in page
+<?php
 
 ?>
 

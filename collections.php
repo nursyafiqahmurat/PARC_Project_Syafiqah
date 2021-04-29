@@ -24,7 +24,7 @@
                         <li><a href='index1.php'>Home</a></li>
                         <li><a href='collections.php'>Collections</a></li>
                         <li><a href='records.php'>Action Records</a></li>
-                        <li><a href='index.php'>Log out</a></li>                        
+                        <li><a href='logout.php'>Log out</a></li>                        
                     </ul>
                 </nav>
             </div>
