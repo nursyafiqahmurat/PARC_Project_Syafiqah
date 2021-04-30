@@ -6,6 +6,9 @@ if(!isset($_SESSION["key"])) {
 }
 
 include 'conn.php';
+$sql = "SELECT * FROM user WHERE User_ID = ".$_SESSION["key"];
+$query= mysqli_query($conn, $sql);
+$user = mysqli_fetch_array($query);
 
 ?>
 
@@ -39,8 +42,8 @@ include 'conn.php';
                 </nav>
             </div>
  
-<div class="col-lg-4">
-  <h2 style="color: white">Collection Data</h2>
+<div class="col-lg-8">
+  <h3 style="color:white;text-align:center;font-family: 'Poppins', sans-serif;">Collection Data: Staff incharge: <?php echo $user['Full_Name'];?></h3>
   <br>
   <form name="collection" method="post">
     <div class="form-group">
