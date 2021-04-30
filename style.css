@@ -7,7 +7,6 @@
     padding: 0;
 
     box-sizing: border-box;
-
 }
 
 .full-page
@@ -22,10 +21,6 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-
-
-    
-
 
 }
 
