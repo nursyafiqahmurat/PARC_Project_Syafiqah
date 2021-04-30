@@ -8,7 +8,7 @@
     <title>Contact Us!</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="shortcut icon" type="image/png" href="images/s-arrow-logo.png">
 </head>
 <body>
