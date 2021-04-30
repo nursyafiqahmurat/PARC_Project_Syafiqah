@@ -76,7 +76,7 @@ if(isset($_POST['login'])) {
                 <nav>
                     <ul id='MenuItems'>
                         <li><a href='index.php'>Home</a></li>
-                        <li><a href='#'>Our Collections</a></li>
+                        <li><a href='our_coll.php'>Our Collections</a></li>
                         <li><a href='contact.php'>Contact Us</a></li>
                         <li><a href='register.php'>Get Membership!</a></li>                        
                     </ul>
