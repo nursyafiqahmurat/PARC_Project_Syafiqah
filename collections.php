@@ -75,8 +75,6 @@ $user = mysqli_fetch_array($query);
       <input type="text" class="form-control" placeholder="Enter ISBN number here" name="ISBN_Number">
     </div>
     <button type="submit" name="insert" class="btn btn-default">Insert</button>
-    <button type="submit" name="edit" class="btn btn-default">Edit</button>
-    <button type="submit" name="remove" class="btn btn-default">Remove</button>
   </form>
 </div>
 </div>
@@ -136,31 +134,10 @@ $user = mysqli_fetch_array($query);
         
         $query = mysqli_query($conn, $sql);
         if ($query) {
-            echo "Success";
         }else {
             echo "Failed";
         }
     }
-
-    if(isset($_POST['remove'])) {
-      $Title_and_Statement_of_Responsibilities = $_POST ["Title_and_Statement_of_Responsibilities"];
-      $Edition = $_POST["Edition"];
-      $Publication_and_Distribution = $_POST["Publication_and_Distribution"];
-      $Physical_Description = $_POST["Physical_Description"];
-      $Series = $_POST["Series"];
-      $Notes = $_POST["Notes"];
-      $ISBN_Number = $_POST["ISBN_Number"];
-      
-      $sql= "DELETE FROM books (Title_and_Statement_of_Responsibilities, Edition, Publication_and_Distribution, Physical_Description, Series, Notes, ISBN_Number)
-      VALUES ('".$Title_and_Statement_of_Responsibilities."','".$Edition."','".$Publication_and_Distribution."','".$Physical_Description."','".$Series."','".$Notes."','".$ISBN_Number."');";
-        echo $sql;
-      $query = mysqli_query($conn, $sql);
-      if ($query) {
-          echo "Success";
-      }else {
-          echo "Failed";
-      }
-  }
 ?>
 </body>
 </html>

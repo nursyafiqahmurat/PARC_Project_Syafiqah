@@ -92,15 +92,15 @@ if(isset($_POST['login'])) {
                                 <input type="text" name="IC_Number" placeholder="IC Number"/>
                                 <input type="text" name="Phone_Number" placeholder="Phone Number"/>
                                 <input type="email" name="email" placeholder="Email"/>
-                                <input type="password" name="password" placeholder="Password"/>
+                                <input type="password" name="password" minLength="8" placeholder="Password"/>
                                 <button type="submit" name="register">REGISTER</button>
                                 <p class="message">Librarian or Staff member? <a href="#">Log in</a></p>
                             </form>
                             <form class="register-form" method="POST">
                                 <br><br><br>
                                 <center><h1 class="main-heading">Login</h1></center>
-                                <input type="text" name="email" placeholder="Email"/>
-                                <input type="password" name="password" placeholder="Password"/>
+                                <input type="email" name="email" placeholder="Email"/>
+                                <input type="password" name="password" minLength="8" placeholder="Password"/>
                                 <button type="submit" name="login">LOGIN</button>
                                 <p class="message">Not a member of the LALA Library yet? <a href="#">Create a membership card today!</a>
                                 </p>

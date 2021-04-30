@@ -3,7 +3,6 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url('images/pexels-ylanite-koppens-796601.jpg');
     background-size:cover;
     font-family: 'Poppins', sans-serif;
 	animation: transitionIn 0.5s;

@@ -40,7 +40,7 @@ $user = mysqli_fetch_array($query);
         <br>
         <h1 style="color:white;text-align:center;font-family: 'Poppins', sans-serif;">Hello <?php echo $user['Full_Name'];?></h1>
         <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Welcome-To-The-Team-Robots-Picture.png" alt="welcome" width="1200" height="400">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/Welcome-To-The-Team-Robots-Picture.png" alt="welcome" width="1200" height="400">
     </div>
 </body>
 </html>

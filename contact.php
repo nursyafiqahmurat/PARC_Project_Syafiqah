@@ -32,7 +32,7 @@
 
   <div class="firstdivision">
           <div class="content">
-            <br>
+            <br><br><br>
           <h1>Want to get in touch?</h1>
           <br>
           <p>We would love to hear from you.<br> Here's how you can reach us</p>
